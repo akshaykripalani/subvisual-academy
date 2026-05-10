@@ -1,0 +1,123 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #f6f7f9;
+  color: #15171a;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 48px 20px;
+}
+
+.guestbook {
+  width: min(760px, 100%);
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+.guestbook h1 {
+  margin: 0;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.subtitle,
+.wallet-status {
+  color: #606873;
+}
+
+.wallet-status {
+  overflow-wrap: anywhere;
+}
+
+.composer {
+  display: grid;
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.composer textarea {
+  min-height: 120px;
+  resize: vertical;
+  border: 1px solid #d8dde5;
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: white;
+  color: #15171a;
+}
+
+.composer textarea:focus {
+  outline: 2px solid #7c9cff;
+  outline-offset: 2px;
+}
+
+.composer button {
+  justify-self: start;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: #15171a;
+  color: white;
+  cursor: pointer;
+}
+
+.composer button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.message-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.message-card {
+  border: 1px solid #e0e4ea;
+  border-radius: 8px;
+  padding: 16px;
+  background: white;
+}
+
+.message-card p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.message-card small {
+  color: #606873;
+  overflow-wrap: anywhere;
+}
