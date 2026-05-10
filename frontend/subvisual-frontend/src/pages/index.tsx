@@ -2,7 +2,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useState } from 'react';
-import { useReadContract, useWriteContract, useAccount } from "wagmi";
+import { useReadContract, useWriteContract, useAccount, useWatchContractEvent } from "wagmi";
 import GuestbookArtifact from '../contracts/Guestbook.json';
 import { Abi } from "viem";
 
@@ -41,6 +41,17 @@ const Home: NextPage = () => {
         abi: guestbookAbi,
         functionName: 'getAllMessages',
     });
+
+    useWatchContractEvent({
+        address: guestbookAddress,
+        abi: guestbookAbi,
+        eventName: 'MessagePosted',
+        onLogs(logs){
+            console.log('Message Posted: ',logs)
+            messagesHook.refetch();
+        }
+    })
+
     const { writeContract, isPending } = useWriteContract();
 
     const chainMessages = (messagesHook.data ?? []) as GuestMessage[];
@@ -84,7 +95,6 @@ const Home: NextPage = () => {
                             {
                                 onSuccess: () => {
                                     setContent('');
-                                    messagesHook.refetch();
                                 },
                             }
                         );
