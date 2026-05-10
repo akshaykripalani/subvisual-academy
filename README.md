@@ -51,9 +51,9 @@ There are 8 tests covering things like:
 # Tech Stack
 1. Solidity
 2. Foundry - For local blockchain and testing
-3. Nextjs - Frontend
-4. Rainbowkit - Wallet connection and auth
-5. Wagmi - React hooks
+3. Nextjs - Frontend, rainbowkit has very good support for it, so easy choice.
+4. Rainbowkit - Wallet connection and auth. I figured this was the fastest way to get set up with wallet connection.
+5. Wagmi - React hooks. Seems to be the standard library that everyone uses. Also pretty neat to interact with might i say!
 6. Viem - Handled by wagmi for ABI interaction
 
 how to run locally without any contract interactions:
