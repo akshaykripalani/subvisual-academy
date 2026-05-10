@@ -71,4 +71,15 @@ contract GuestbookTest is Test {
 
         guestbook.writeToBook("Hello Event");
     }
+
+    function test_getAllMessagesReturnsCount() public {
+        guestbook.writeToBook("First");
+        guestbook.writeToBook("Second");
+        guestbook.writeToBook("Third");
+        
+        uint256 messageCount = guestbook.getAllMessages().length;
+
+        assertEq(messageCount, 3);
+
+    }
 }

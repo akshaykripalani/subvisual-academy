@@ -37,4 +37,8 @@ contract Guestbook {
         GuestMessage storage message = messages[msgId - 1];
         return message;
     }
+
+    function getAllMessages() public view returns (GuestMessage[] memory) {
+        return messages;
+    }
 }
